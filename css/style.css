@@ -1,0 +1,187 @@
+/* ==========================================
+   1. CONFIGURAÇÕES DE RESET E FONTE
+   ========================================== */
+* {
+    margin: 2px;
+    padding: 8px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+    width: 100%;
+    overflow-x: hidden;
+    display: block !important; /* Desativa centralizações herdadas no body */
+    text-align: left !important;
+}
+
+/* ==========================================
+   2. ESTRUTURA E LAYOUT PRINCIPAL
+   ========================================== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto !important; /* Centraliza a caixa estrutural, não os textos */
+    padding: clamp(20px, 5vw, 60px) 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important; /* Alinha todo o conteúdo à esquerda */
+    justify-content: flex-start;
+}
+
+.header-logo {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.header-logo .logo {
+    max-height: 90px;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================
+   3. TEXTOS SUPERIORES (BOAS-VINDAS)
+   ========================================== */
+.welcome-section {
+    width: 100%;
+    text-align: left;
+}
+
+.welcome-section h1 {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #111111;
+}
+
+.welcome-section .mensagem-boas-vindas {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: #777777;
+    line-height: 1.5;
+    max-width: 800px;
+}
+
+/* Linha Divisória Fina e Cinza */
+.divider {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #e4e4e4;
+    margin-top: 30px;
+}
+/* ==========================================
+   4. SEÇÃO DE CARDS (GRID E RESPONSIVIDADE)
+   ========================================== */
+.cards-grid {
+    display: grid;
+    /* Divide em 3 colunas em telas normais e joga para 1 coluna em celulares */
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 24px;
+    width: 100%;
+    /* Empurra os cards significativamente para baixo da linha */
+    margin-top: clamp(40px, 8vw, 80px) !important; 
+}
+
+/* ==========================================
+   5. ESTILIZAÇÃO DOS CARDS
+   ========================================== */
+.card {
+    background: #ffffff;
+    border: 1px solid #ededed;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+    box-shadow: 1px 4px 12px rgba(29, 172, 65, 0.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(66, 207, 137, 0.05);
+}
+
+.card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 30px;
+}
+
+.card-icon i {
+    font-size: 28px;
+}
+
+.icon-green {
+    background: #eaf4ea;
+}
+
+.icon-green i {
+    color: #15803d;
+}
+
+.icon-blue {
+    background: #e8f1fb;
+}
+
+.icon-blue i {
+    color: #2563eb;
+}
+
+.icon-orange {
+    background: #fdf0df;
+}
+
+.icon-orange i {
+    color: #ea580c;
+}
+
+.card-content h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #666666;
+    line-height: 1.45;
+    margin-bottom: 24px;
+}
+
+.card-footer {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: auto;
+}
+
+.footer-green { color: #2e7d32; }
+.footer-blue { color: #1565c0; }
+.footer-orange { color: #ef6c00; }
+
+/* ==========================================
+   6. MEDIA QUERIES (REFINAMENTOS CELULAR)
+   ========================================== */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 16px;
+    }
+    .cards-grid {
+        gap: 16px;
+    }
+    .card {
+        padding: 20px;
+    }
+}

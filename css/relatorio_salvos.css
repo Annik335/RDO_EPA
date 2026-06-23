@@ -1,0 +1,156 @@
+* {
+    margin: 2px;
+    padding: 2px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+    width: 100%;
+    overflow-x: hidden;
+    display: block !important;
+    /* Desativa centralizações herdadas no body */
+    text-align: left !important;
+}
+
+.topbar {
+    background: #0f5d43;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    border-radius: 6px;
+
+}
+
+.logo-area img {
+    height: 55px;
+}
+
+.menu {
+    display: flex;
+    gap: 35px;
+}
+
+.menu a {
+    color: #b3d1c8;
+    ;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.container {
+    padding: 25px;
+}
+
+.page-header h1 {
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #64748b;
+}
+
+.filtros {
+    background: white;
+    margin-top: 30px;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.campo input {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+.tabs {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.tab-btn.active {
+    color: #0f5d43;
+    border-bottom: 3px solid #0f5d43;
+}
+
+.tab-content {
+    display: none;
+    margin-top: 25px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+thead {
+    background: #f1f5f9;
+}
+
+th,
+td {
+    padding: 18px;
+    text-align: left;
+}
+
+tbody tr {
+    border-top: 1px solid #e2e8f0;
+}
+
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.finalizado {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.andamento {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.acoes i {
+    margin-right: 15px;
+    cursor: pointer;
+    color: #0f5d43;
+}

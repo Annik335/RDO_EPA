@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDO - Grupo EPA</title>
+    <link rel="stylesheet" href="/css/planilha.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="image-logo">
+          <img src="/img/Logo EPA.png" class="logo-cabecalho" alt="Logo da Empresa">
+        </div>
+        <nav>
+            <a href="index.html">Página inicial</a>
+            <a href="novo_rdo.html">RDO</a>
+            <a href="planilha_campo.html">Planilha de Campo</a>
+            <a href="relatorios_salvos.html">Relatório salvos</a>
+            
+            </a>
+        </nav>
+    </header>
+
+    <form id="rdoForm">
+        <div class="filters-grid">
+            <div class="filter-card">OPERADOR <input type="text" id="operador" required></div>
+            <div class="filter-card">DATA <input type="date" id="data" required></div>
+            <div class="filter-card">ÁREA <input type="text" id="area"></div>
+            <div class="filter-card">CLIMA <input type="text" id="clima"></div>
+            <div class="filter-card">PLUVIÔMETRO <input type="number" id="pluviometro"></div>
+        </div>
+        <div class="main-container">
+
+            <div class="column">
+                <div class="section-block">
+                    <div class="section-title">1. Extração / Volume Bombeado</div>
+                    <table id="tabelaExtracao">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">Poço de Remediação</th>
+                                <th>Hidrômetro (Manhã)</th>
+                                <th>Hidrômetro (Tarde)</th>
+                                <th rowspan="2">Altura da Bomba (M)</th>
+                                <th rowspan="2">Saída de cada Autopump (500ml)</th>
+                            </tr>
+                            <tr>
+                                <th>Hora: <input type="time" class="th-time-input"></th>
+                                <th>Hora: <input type="time" class="th-time-input"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </section>
+
+                    <div class="section-block">
+                        <div class="section-title">6. Resíduos Sólidos e Líquidos</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tambores para Retirada (QTND) - Líquido</th>
+                                    <th>Tambores para Retirada (QTND) - Sólido</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="text" id="residuoLiquido"></td>
+                                    <td><input type="text" id="residuoSolido"></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                     <div class="section-block">
+                        <div class="section-title">7. Controles ambientais e 5S</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>5S ( S / N)</th>
+                                    <th>Checkelist Mensal ( S / N)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="text" id="residuoLiquido"></td>
+                                    <td><input type="text" id="residuoSolido"></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+                   
+
+                    <div class="section-block">
+                        <div class="section-title">8. Observações, Manutenções</div>
+                        <textarea id="observacoes"
+                            placeholder="Digite aqui as ocorrências e manutenções"></textarea>
+                    </div>
+            </div>
+
+            <div class="column">
+                <div class="section-block">
+                    <div class="section-title">2. Infiltração/ Volume Bombeado</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th rowspan="2">Hidrômetro</th>
+                                <th>Manhã</th>
+                                <th>Tarde</th>
+                            </tr>
+                            <tr>
+                                <th>Hora: <input type="time" class="th-time-input"></th>
+                                <th>Hora: <input type="time" class="th-time-input"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Geral</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Saída 01</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Saída 02</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Saída 03</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pressao-container">
+                        <div><label>Pressão da Bomba (Infiltração)</label><input type="text"></div>
+                        <div><label>Pressão da Bomba - Geral</label><input type="text"></div>
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">3. Dosagem de Nutrientes</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Realizada (S/N)</th>
+                                <th>Quantidade MAP (kg)</th>
+                                <th>Quantidade Ureia (kg)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">4. Compressores</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Parâmetros</th>
+                                <th>Compressor 01</th>
+                                <th>Compressor 02</th>
+                            </tr>
+                        <tbody>
+                            <tr>
+                                <td>Horímetro(hh)</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Pressão(Bar)</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Drenagem de água(ml)</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Tempo Desligado</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Troca de Filtro de Ar</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Nível de Óleo</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Troca de óleo e filtro(a cada 1.000hr)</td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>Linha de Ar</th>
+                                <th>Compressor 01</th>
+                                <th>Compressor 02</th>
+                            </tr>
+                            </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                </div>
+                </tbody>
+                </thead>
+                </tbody>
+                </table>
+
+
+            </div>
+            <div class="section-block">
+                <div class="section-title">5. Remoção de óleo</div>
+                <span class="sub-caption">Caixa Separadora ( SAO 01 )</span>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Volume de óleo removido(ml)</th>
+                            <th>Data da última limpeza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <span class="sub-caption">Caixa Separadora ( SAO 02 )</span>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Volume de óleo removido(ml)</th>
+                            <th>Data da última limpeza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+
+        <div class="footer-actions">
+            <button type="button" class="btn btn-danger" id="btnExcluir">Excluir</button>
+            <div>
+                <button type="button" class="btn btn-secondary" id="btnSalvar">Salvar</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

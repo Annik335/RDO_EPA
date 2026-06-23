@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDO - Relatório Diário de Acompanhamento de Obras</title>
+
+    <!-- CORRIGIDO: Removidas as barras invertidas e absolutas para carregar o CSS local corretamente -->
+    <link rel="stylesheet" href="/css/planilha.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="wrapper" >
+
+   
+        <aside class="sidebar">
+            <div class="logo">
+           
+                <img src="/img/Logo EPA.png" alt="EPA">
+            </div>
+
+            <nav class="menu">
+                <a href="index.html" class="nav-link">Página Inicial</a>
+                <a href="novo_rdo.html" class="nav-link">Novo RDO</a>
+                <a href="planilha_campo.html" class="nav-link">Planilha de Campo</a>
+                <a href="relatorios_salvos.html" class="nav-link">Relatórios Salvos</a>
+            </nav>
+        </aside>
+
+        <!-- CONTEÚDO -->
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Novo RDO</h1>
+                <p>Relatório Diário de Acompanhamento de Obras</p>
+            </header>
+
+            <!-- DADOS GERAIS -->
+            <section class="card">
+                <h2>Dados Gerais</h2>
+                <div class="grid-2">
+                    <div class="campo">
+                        <label for="cliente">Cliente</label>
+                        <input type="text" id="cliente">
+                    </div>
+                    <div class="campo">
+                        <label for="contrato">Contrato</label>
+                        <input type="text" id="contrato">
+                    </div>
+                    <div class="campo">
+                        <label for="projeto">Projeto EPA</label>
+                        <input type="text" id="projeto">
+                    </div>
+                    <div class="campo">
+                        <label for="empresa">Empresa</label>
+                        <input type="text" id="empresa">
+                    </div>
+                    <div class="campo">
+                        <label for="local">Local</label>
+                        <input type="text" id="local">
+                    </div>
+                    <div class="campo">
+                        <label for="data">Data</label>
+                        <input type="date" id="data">
+                    </div>
+                    <div class="campo">
+                        <label for="clima">Clima</label>
+                        <input type="text" id="clima">
+                    </div>
+                    <div class="campo">
+                        <label for="numeroRdo">Nº RDO</label>
+                        <input type="text" id="numeroRdo">
+                    </div>
+                    <div class="campo">
+                        <label for="realizado">Realizado por</label>
+                        <input type="text" id="realizado">
+                    </div>
+                    <div class="campo">
+                        <label for="supervisor">Supervisionado por</label>
+                        <input type="text" id="supervisor">
+                    </div>
+                </div>
+            </section>
+
+            <!-- ATIVIDADE -->
+            <section class="card">
+                <h2>Atividade</h2>
+                <div class="campo">
+                    <label for="tituloAtividade">Título da Atividade</label>
+                    <input type="text" id="tituloAtividade">
+                </div>
+                <div class="campo">
+                    <label for="descricao">Descrição da Atividade</label>
+                    <textarea id="descricao" rows="8"></textarea>
+                </div>
+                <button id="btnIA" class="btn-ia">🎤 Falar Relatório</button>
+            </section>
+
+            <!-- POÇOS EXECUTADOS -->
+            <section class="card">
+                <div class="titulo-tabela">
+                    <h2>Poços Executados</h2>
+                    <button id="addPoco" class="btn-add">+ Adicionar Poço</button>
+                </div>
+                <div class="table-container">
+                    <table class="tabela-rdo">
+                        <thead>
+                            <tr>
+                                <th>Poço</th>
+                                <th>Profundidade</th>
+                                <th>Data Finalização</th>
+                                <th>Diâmetro</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaPocos"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- REGISTRO FOTOGRÁFICO -->
+            <section class="card">
+                <h2>Registro Fotográfico</h2>
+                <input type="file" id="fotos" multiple accept="image/*">
+                <div id="previewFotos" class="galeria"></div>
+            </section>
+
+            <!-- INFORMAÇÕES FINAIS -->
+            <section class="card">
+                <h2>Informações Finais</h2>
+                <div class="campo">
+                    <label for="tempoDeslocamento">Tempo de Deslocamento</label>
+                    <input type="text" id="tempoDeslocamento">
+                </div>
+                <div class="campo">
+                    <label for="tempoLiberacao">Tempo Aguardando Liberação</label>
+                    <input type="text" id="tempoLiberacao">
+                </div>
+                <div class="campo">
+                    <label for="interferencias">Interferências / Dificuldades</label>
+                    <textarea id="interferencias" rows="4"></textarea>
+                </div>
+                <div class="campo">
+                    <label for="mudancasPlano">Mudanças no Plano de Trabalho</label>
+                    <textarea id="mudancasPlano" rows="4"></textarea>
+                </div>
+                <div class="campo">
+                    <label for="acidentes">Acidentes / Incidentes</label>
+                    <textarea id="acidentes" rows="4"></textarea>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- BARRA DE AÇÕES -->
+    <footer class="acoes">
+        <button id="btnSalvar" class="btn salvar">💾 Salvar</button>
+        <button id="btnPdf" class="btn pdf">📄 Gerar PDF</button>
+        <button id="btnEnviar" class="btn enviar">📧 Enviar</button>
+    </footer>
+
+    <!-- CORRIGIDO: Removida a barra absoluta inicial para garantir o mapeamento do script local -->
+    <script src="/js/storage.js" defer></script>
+    <script src="/js/rdo.js" defer></script>
+</body>
+
+</html>
