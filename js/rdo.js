@@ -1,6 +1,3 @@
-// ==================================================
-// rdo.js – Sistema RDO Grupo EPA
-// ==================================================
 
 
 // ==================================================
@@ -19,6 +16,61 @@ if (typeof emailjs !== 'undefined') {
     console.error('EmailJS SDK não encontrado. Verifique se o script CDN está antes do rdo.js no HTML.');
 }
 
+//=================== SAUDAÇÃO=========================
+
+(function inicializarHeader() {
+    const horaAtual = new Date().getHours();
+ 
+    let saudacao = '';
+    if (horaAtual >= 6 && horaAtual < 12)       saudacao = 'Bom dia!';
+    else if (horaAtual >= 12 && horaAtual < 18)  saudacao = 'Boa tarde!';
+    else                                          saudacao = 'Boa noite!';
+ 
+    const elSaudacao = document.getElementById('saudacao');
+    if (elSaudacao) elSaudacao.textContent = saudacao;
+ 
+    const dias  = ['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
+    const meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+    const agora = new Date();
+ 
+    const elData = document.getElementById('currentDate');
+    if (elData) {
+        elData.textContent = `${dias[agora.getDay()]}, ${agora.getDate()} de ${meses[agora.getMonth()]} de ${agora.getFullYear()}`;
+    }
+ 
+    const inputData = document.getElementById('data');
+    if (inputData && !inputData.value) {
+        inputData.value = agora.toISOString().slice(0, 10);
+    }
+})();
+
+//==================== OFFILINE================================
+
+ function atualizarStatus() {
+    const pill  = document.getElementById('statusPill');
+    const texto = document.getElementById('statusText');
+    if (!pill || !texto) return;
+ 
+    const dot = pill.querySelector('.status-dot');
+ 
+    if (navigator.onLine) {
+        texto.textContent           = 'Online';
+        if (dot) dot.style.background = '#22C55E';
+        pill.style.background       = '#EDFAF2';
+        pill.style.borderColor      = '#C3E6D0';
+        pill.style.color            = '#064E3B';
+    } else {
+        texto.textContent           = 'Offline';
+        if (dot) dot.style.background = '#F59E0B';
+        pill.style.background       = '#FFFBEB';
+        pill.style.borderColor      = '#FDE68A';
+        pill.style.color            = '#92400E';
+    }
+}
+ 
+window.addEventListener('online',  atualizarStatus);
+window.addEventListener('offline', atualizarStatus);
+atualizarStatus();
 
 // ==================================================
 // DATA PADRÃO NO CAMPO
@@ -92,9 +144,9 @@ function adicionarLinhaPoco(poco = {}) {
     tr.dataset.id = id;
 
     tr.innerHTML = `
-        <td><input type="text"   value="${poco.poco     || ''}" placeholder="Ex: PB-37"    data-campo="poco"></td>
-        <td><input type="number" value="${poco.prof     || ''}" placeholder="0.00" step="0.01" data-campo="prof"></td>
-        <td><input type="date"   value="${poco.data     || ''}"                              data-campo="data"></td>
+        <td><input type="text"   value="${poco.poco     || ''}"></td>
+        <td><input type="number" value="${poco.prof     || ''}"></td>
+        <td><input type="date"   value="${poco.data     || ''}"></td>
         <td>
             <select data-campo="diametro">
                 <option value="">—</option>
