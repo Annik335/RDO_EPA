@@ -1,6 +1,4 @@
 
-
-
 /* --- HEADER --- */
 header {
     background-color: #0f5d43;
@@ -11,6 +9,8 @@ header {
     align-items: center;
     border-radius: 6px;
     margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+   
 }
 
 header nav a {
@@ -49,7 +49,7 @@ header nav a.active {
 }
 
 
- 
+
 .topbar {
     display: flex;
     align-items: center;
@@ -59,20 +59,20 @@ header nav a.active {
     border-bottom: 1px solid #E5E7EB;
     flex-shrink: 0;
 }
- 
+
 .topbar-left h1 {
     font-size: 18px;
     font-weight: 600;
     color: var(--primary-green);
     margin: 0;
 }
- 
+
 .topbar-left p {
     font-size: 12px;
     color: #666;
     margin-top: 2px;
 }
- 
+
 .status-pill {
     display: flex;
     align-items: center;
@@ -86,7 +86,7 @@ header nav a.active {
     color: #064E3B;
     transition: all 0.2s;
 }
- 
+
 .status-dot {
     width: 7px;
     height: 7px;
@@ -229,8 +229,13 @@ header nav a.active {
 }
 
 @keyframes flashVerde {
-    0%   { background: #DCFCE7; }
-    100% { background: #F0FDF4; }
+    0% {
+        background: #DCFCE7;
+    }
+
+    100% {
+        background: #F0FDF4;
+    }
 }
 
 /* ==================================================
@@ -557,8 +562,15 @@ header nav a.active {
 }
 
 @keyframes pulseAudio {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.3); }
-    50%       { box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); }
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 0 6px rgba(220, 38, 38, 0);
+    }
 }
 
 /* Indicador de gravação */
@@ -585,8 +597,17 @@ header nav a.active {
 }
 
 @keyframes pulseDot {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50%       { opacity: 0.4; transform: scale(0.7); }
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(0.7);
+    }
 }
 
 /* Botão Salvar */
@@ -652,16 +673,28 @@ header nav a.active {
     transform: translateX(-50%) translateY(0);
 }
 
-.toast.success { background: var(--primary-green); }
-.toast.error   { background: #DC2626; }
-.toast.warning { background: #D97706; }
+.toast.success {
+    background: var(--primary-green);
+}
+
+.toast.error {
+    background: #DC2626;
+}
+
+.toast.warning {
+    background: #D97706;
+}
 
 
 header img {
-  width: 90px;       /* Altere o valor em pixels para o tamanho desejado */
-  height: auto;       /* Evita que a imagem fique esticada ou distorcida */
-  object-fit: contain; /* Garante que toda a logo fique visível sem cortes */
+    width: 90px;
+    /* Altere o valor em pixels para o tamanho desejado */
+    height: auto;
+    /* Evita que a imagem fique esticada ou distorcida */
+    object-fit: contain;
+    /* Garante que toda a logo fique visível sem cortes */
 }
+
 .nav-section-label {
     font-size: 10px;
     font-weight: 600;

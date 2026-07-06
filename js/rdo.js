@@ -72,51 +72,6 @@ window.addEventListener('online',  atualizarStatus);
 window.addEventListener('offline', atualizarStatus);
 atualizarStatus();
 
-// ==================================================
-// DATA PADRÃO NO CAMPO
-// ==================================================
-
-document.addEventListener('DOMContentLoaded', () => {
-    const inputData = document.getElementById('data');
-    if (inputData && !inputData.value) {
-        inputData.value = new Date().toISOString().slice(0, 10);
-    }
-    atualizarTabelaEmpty();
-
-    // Carrega RDO em edição se vier via ?id=
-    const params = new URLSearchParams(window.location.search);
-    const rdoId  = params.get('id');
-    if (rdoId) {
-        const lista = JSON.parse(localStorage.getItem('rdos') || '[]');
-        const rdo   = lista.find(r => r.id === rdoId);
-        if (rdo) carregarRdo(rdo);
-    }
-});
-
-
-// ==================================================
-// STATUS ONLINE / OFFLINE
-// ==================================================
-
-function atualizarStatus() {
-    const pill  = document.getElementById('statusPill');
-    const texto = document.getElementById('statusText');
-    if (!pill || !texto) return;
-    const dot = pill.querySelector('.status-dot');
-    if (navigator.onLine) {
-        texto.textContent = 'Online';
-        if (dot) dot.style.background = '#22C55E';
-        pill.style.cssText = 'background:#EDFAF2;border-color:#C3E6D0;color:#064E3B;';
-    } else {
-        texto.textContent = 'Offline';
-        if (dot) dot.style.background = '#F59E0B';
-        pill.style.cssText = 'background:#FFFBEB;border-color:#FDE68A;color:#92400E;';
-    }
-}
-window.addEventListener('online',  atualizarStatus);
-window.addEventListener('offline', atualizarStatus);
-atualizarStatus();
-
 
 // ==================================================
 // TABELA DE POÇOS
